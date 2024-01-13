@@ -2,17 +2,21 @@ Using Open Trivia DB for this project - https://opentdb.com/
 
 TODO in order:
 
-- prettier, eslint, dev dependencies | will not use eslint in order to simulate interview environment
-- decide on styling (must be basic and perhaps colorful?) - font and color palette
-- homepage & basic structure of pages & header
+++ prettier, eslint, dev dependencies | will not use eslint in order to simulate interview environment
+++ decide on styling (must be basic and perhaps colorful?) - font and color palette
 
-* sidebar tabs (1) for different pages
-  - tab for let’s play a game, where the trivia would be
-    - here would be the dropdown component (2) which will be used to select category for the question
-  - here we would have accordion component (3) for the answer
-    - question / correct answer / incorrect answer
-  - second tab for ‘to learn’ where the user can add topics as a todo list (4) on which he should learn more about
-    - should have add / edit / delete tasks
-    - this should be stored in local storage
-* make custom React hook (5) that encapsulates some common functionality, such as local storage handling, debounce, or form validation
-* make the real api calls and remove link from mocked json files
+++ homepage & basic structure of pages & header
+
+++ sidebar tabs (1) for different pages
+
+- tab for let’s play a game, where the trivia would be
+  - here would be the dropdown component (2) which will be used to select category for the question
+- here we would have accordion component (3) for the answer
+  - question / correct answer / incorrect answer
+- second tab for ‘to learn’ where the user can add topics as a todo list (4) on which he should learn more about
+
+  - should have add / edit / delete tasks
+  - this should be stored in local storage
+
+- make custom React hook (5) that encapsulates some common functionality, such as local storage handling, debounce, or form validation
+- make the real api calls and remove link from mocked json files
