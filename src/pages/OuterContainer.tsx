@@ -36,11 +36,13 @@ const OuterContainer = (): JSX.Element => {
         </NavButton>
       </SideNav>
 
-      {currentTab === 1 && <MainContainer />}
+      <MainContent>
+        {currentTab === 1 && <MainContainer />}
 
-      {currentTab === 2 && <TriviaPage />}
+        {currentTab === 2 && <TriviaPage />}
 
-      {currentTab === 3 && <ToLearnPage />}
+        {currentTab === 3 && <ToLearnPage />}
+      </MainContent>
     </Wrap>
   );
 };
@@ -78,4 +80,14 @@ const NavButton = styled.div<INavButton>`
   border-color: ${props => props.$borderColor};
   cursor: pointer;
   user-select: none;
+`;
+
+const MainContent = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 48px;
+  padding-top: 24px;
+
+  border: 1px solid blue;
 `;
