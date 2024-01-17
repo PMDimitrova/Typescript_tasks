@@ -5,9 +5,9 @@ import { useState } from 'react';
 import answers from '../mock-ups/answers';
 import colorTheme from '../colorTheme';
 
-interface IHeading {
+type IHeading = {
   $fontColor: string;
-}
+};
 
 interface AccordionDataState {
   question: string;
@@ -42,7 +42,7 @@ const TriviaPage = (): JSX.Element => {
         ? { ...question, is_answer_shown: !question.is_answer_shown }
         : question;
     });
-    console.log('result: ', result);
+
     setDataForAccordion(result);
   };
 
@@ -74,19 +74,25 @@ const Heading = styled.h1<IHeading>`
 
 const QandAWrap = styled.div`
   width: 350px;
-
-  border: 1px solid orange;
+  margin-bottom: 12px;
 `;
 
 const QuestionWrap = styled.div`
   width: 100%;
-  //TODO: add hover state & styling
+  padding: 4px;
+  font-weight: 900;
+  border: 1px solid #74a9b3;
 
-  border: 1px solid red;
+  //TODO: add hover state & styling
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const AnswerWrap = styled.div`
   width: 100%;
-
-  border: 1px solid limegreen;
+  padding: 4px;
+  color: #74a9b3;
+  font-weight: 900;
+  border: 1px solid #74a9b3;
 `;
