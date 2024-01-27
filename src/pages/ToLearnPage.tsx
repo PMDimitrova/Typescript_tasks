@@ -19,13 +19,16 @@ const ToLearnPage = (): JSX.Element => {
   const [listOfEntries, setListOfEntries] = useState<String[]>([]);
 
   useEffect(() => {
-    listOfEntries.length && localStorage.setItem('inputEntries', JSON.stringify(listOfEntries));
-  }, [listOfEntries]);
+    const hasAlreadyStoredItems = localStorage.getItem('inputEntries');
+    if (hasAlreadyStoredItems) {
+      const entriesInLocalStorage = JSON.parse(localStorage.getItem('inputEntries') || '');
+      setListOfEntries([...entriesInLocalStorage]);
+    }
+  }, []);
 
   useEffect(() => {
-    const entriesInLocalStorage = JSON.parse(localStorage.getItem('inputEntries') || '');
-    entriesInLocalStorage.length && setListOfEntries([...entriesInLocalStorage]);
-  }, []);
+    listOfEntries.length && localStorage.setItem('inputEntries', JSON.stringify(listOfEntries));
+  }, [listOfEntries]);
 
   const addToList = () => {
     setListOfEntries([...listOfEntries, inputValue]);

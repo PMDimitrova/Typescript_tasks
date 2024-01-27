@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+import Dropdown from '../components/Dropdown';
 import answers from '../mock-ups/answers';
 import colorTheme from '../colorTheme';
 
-type IHeading = {
+type FontColor = {
   $fontColor: string;
 };
 
@@ -50,6 +51,8 @@ const TriviaPage = (): JSX.Element => {
     <Wrap>
       <Heading $fontColor={colorTheme.attention}>Let`s play a game</Heading>
 
+      <Dropdown />
+
       {dataForAccordion &&
         dataForAccordion.map(entry => (
           <QandAWrap key={entry.question}>
@@ -67,7 +70,7 @@ export default TriviaPage;
 
 const Wrap = styled.div``;
 
-const Heading = styled.h1<IHeading>`
+const Heading = styled.h1<FontColor>`
   color: ${props => props.$fontColor};
   margin-bottom: 48px;
 `;
@@ -82,6 +85,7 @@ const QuestionWrap = styled.div`
   padding: 4px;
   font-weight: 900;
   border: 1px solid #74a9b3;
+  border-radius: 4px;
 
   //TODO: add hover state & styling
   &:hover {
@@ -94,5 +98,8 @@ const AnswerWrap = styled.div`
   padding: 4px;
   color: #74a9b3;
   font-weight: 900;
-  border: 1px solid #74a9b3;
+  border-bottom: 1px solid #74a9b3;
+  border-left: 1px solid #74a9b3;
+  border-right: 1px solid #74a9b3;
+  border-radius: 4px;
 `;
